@@ -54,24 +54,31 @@ router.get('/category/:id',function(req,res,next){
       if(err) return next(err);
       products = products.map(item => {
         return {
-          "url": "https://amazon-clone-hp.herokuapp.com/productbuy/" + item.id,
-          "type": "json_plugin_url",
-          "title": item.name
+          "title": item.name,
+          "image_url":"http://rockets.chatfuel.com/assets/shirt.jpg",
+          "subtitle":"Size: M",
+          "buttons":[
+            {
+              "type":"web_url",
+              "url":"https://amazon-clone-hp.herokuapp.com/productbuy/" + item.id,
+              "title": "Buy Now"
+            }
+          ]
         }
       });
       res.send({
         "messages": [
-          {
-            "attachment": {
-              "type": "template",
-              "payload": {
-                "template_type": "button",
-                "text": "Hello! How's it going?",
-                "buttons": products.slice(0, 5)
-              }
-            }
-          }
-        ]
+           {
+             "attachment":{
+               "type":"template",
+               "payload":{
+                 "template_type":"list",
+                 "top_element_style":"large",
+                 "elements": products.slice(0,3)
+               }
+             }
+           }
+         ]
       });
     });
 });
