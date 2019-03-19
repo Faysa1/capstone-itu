@@ -54,8 +54,24 @@ router.get('/categories',function(req,res,next){
               "type": "template",
               "payload": {
                 "template_type": "button",
-                "text": "Hello!",
-                "buttons": categories
+                "text": "Hello! How's it going?",
+                "buttons": [
+                  {
+                    "url": "https://developers.google.com/speed/webp/gallery1",
+                    "type": "json_plugin_url",
+                    "title": "fruits"
+                  },
+                  {
+                    "url": "https://developers.google.com/speed/webp/gallery1",
+                    "type": "json_plugin_url",
+                    "title": "abc"
+                  },
+                  {
+                    "url": "https://developers.google.com/speed/webp/gallery1",
+                    "type": "json_plugin_url",
+                    "title": "def"
+                  }
+                ]
               }
             }
           }
