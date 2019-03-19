@@ -22,30 +22,14 @@ router.get('/categories',function(req,res,next){
     .populate()
     .exec(function(err, categories){
       if(err) return next(err);
-      console.log('Products :: ', categories);
-      var categories = [];
-      // categories = categories.map(item => {
-      //   return {
-      //     "type": "show_block",
-      //     "block_names": [item.name],
-      //     "title": "Show Block"
-      //   }
-      // });
-      categories.push({
-        "type": "show_block",
-        "block_names": ["name of block"],
-        "title": "Show Block"
+      categories = categories.map(item => {
+        return {
+          "url": "https://amazon-clone-hp.herokuapp.com/product" + item.name,
+          "type": "json_plugin_url",
+          "title": item.name
+        }
       });
-      categories.push({
-        "type": "web_url",
-        "url": "https://rockets.chatfuel.com",
-        "title": "Visit Website"
-      });
-      categories.push({
-        "url": "https://rockets.chatfuel.com/api/welcome",
-        "type":"json_plugin_url",
-        "title":"Postback"
-      });
+      
       
       res.send({
         "messages": [
@@ -55,23 +39,7 @@ router.get('/categories',function(req,res,next){
               "payload": {
                 "template_type": "button",
                 "text": "Hello! How's it going?",
-                "buttons": [
-                  {
-                    "url": "https://developers.google.com/speed/webp/gallery1",
-                    "type": "json_plugin_url",
-                    "title": "fruits"
-                  },
-                  {
-                    "url": "https://developers.google.com/speed/webp/gallery1",
-                    "type": "json_plugin_url",
-                    "title": "abc"
-                  },
-                  {
-                    "url": "https://developers.google.com/speed/webp/gallery1",
-                    "type": "json_plugin_url",
-                    "title": "def"
-                  }
-                ]
+                "buttons": categories
               }
             }
           }
