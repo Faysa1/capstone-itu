@@ -73,7 +73,7 @@ router.get('/category/:id',function(req,res,next){
                "type":"template",
                "payload":{
                  "template_type":"list",
-                 "top_element_style":"large",
+                 "top_element_style":"medium",
                  "elements": products.slice(0,3)
                }
              }
