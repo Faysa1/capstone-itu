@@ -23,12 +23,17 @@ router.get('/categories',function(req,res,next){
     .exec(function(err, categories){
       if(err) return next(err);
       console.log('Products :: ', categories);
-      categories = categories.map(item => {
-        return {
-          "type": "show_block",
-          "block_names": [item.name],
-          "title": "Show Block"
-        }
+      // categories = categories.map(item => {
+      //   return {
+      //     "type": "show_block",
+      //     "block_names": [item.name],
+      //     "title": "Show Block"
+      //   }
+      // });
+      categories.push({
+        "type": "show_block",
+        "block_names": ["name of block"],
+        "title": "Show Block"
       });
       categories.push({
         "type": "web_url",
