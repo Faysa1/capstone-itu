@@ -60,7 +60,7 @@ router.get('/category/:id',function(req,res,next){
           "buttons":[
             {
               "type":"web_url",
-              "url":"https://amazon-clone-hp.herokuapp.com/productbuy/" + item.id,
+              "url":"https://amazon-clone-hp.herokuapp.com/product/" + item.id,
               "title": "Buy Now"
             }
           ]
@@ -73,7 +73,7 @@ router.get('/category/:id',function(req,res,next){
                "type":"template",
                "payload":{
                  "template_type":"list",
-                 "top_element_style":"medium",
+                 "top_element_style":"large",
                  "elements": products.slice(0,3)
                }
              }
@@ -81,6 +81,20 @@ router.get('/category/:id',function(req,res,next){
          ]
       });
     });
+});
+
+router.get('/product/:id',function(req,res,next){
+  Product
+    .findOne({_id: req.params.id})
+    .populate('category')
+    .exec(function(err,product){
+      if(err) return next(err);
+      res.render('main/product', { product: product});
+    });
+});
+
+router.get('/checkout',function(req,res,next){
+  res.render('main/checkout', { });
 });
 
 module.exports = router;

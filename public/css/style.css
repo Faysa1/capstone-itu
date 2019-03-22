@@ -4,3 +4,17 @@ body{
 #navbar-gap{
   margin-top: -4%;
 }
+.row.thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row.thumbnail .thumb-img {
+  width: 120px;
+  height: 120px;
+}
+
+.pice-details {
+  padding: 15px;
+}
