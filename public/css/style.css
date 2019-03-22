@@ -18,3 +18,8 @@ body{
 .pice-details {
   padding: 15px;
 }
+
+.row-cart{
+  display: flex;
+  align-items: center;
+}

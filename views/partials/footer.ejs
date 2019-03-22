@@ -53,25 +53,24 @@
           generateHTML += '<div class="col-md-3">';
           generateHTML += '<img class="thumb-img" src="' + tempData[3] + '" />';
           generateHTML += '</div>';
-          generateHTML += '<div class="col-md-9 caption">';
+          generateHTML += '<div class="col-md-6 caption">';
           generateHTML += '<h3>' + tempData[1] + '</h3>';
           generateHTML += '<p>';
           generateHTML += tempData[2];
           generateHTML += '</p>';
           generateHTML += '<p>';
           generateHTML += tempData[4];
-          generateHTML += '</p>';
-          generateHTML += '<p> <button class="btn btn-primary remove-btn" type="button" id="'+ item + '">Remove</button>'
-          generateHTML += '</div></div>';
+          generateHTML += '</p></div>';
+          generateHTML += '<div class="col-md-3"><p> <button class="btn btn-primary remove-btn" type="button" id="'+ item + '">Remove</button></div>'
+          generateHTML += '</div>';
         });
-        console.log('amount values :', amountValues.length > 0 ? 20 : 0);
         generateHTML += "</div>";
         generateHTML += '<div class="col-md-4"><div class="pice-details"><h2>Price Details</h2>';
         generateHTML += '<div class="row"><div class="col-md-6"><p>Delivery Charges</p></div>';
-        generateHTML += '<div class="col-md-6"><p id="del-charges">' + (amountValues.length > 0 ? 20 : 0) +'$</p></div>';
+        generateHTML += '<div class="col-md-6"><p id="del-charges">' + (amountValues.length > 0 ? 20 : 0) +'$</p></div></div>';
         generateHTML += '<div class="row"><div class="col-md-6"><p>Amount Payable</p></div>';
-        generateHTML += '<div class="col-md-6"><p id="total-amount">0$</p></div>';
-        generateHTML += '</div></div></div></div>';
+        generateHTML += '<div class="col-md-6"><p id="total-amount">0$</p></div></div>';
+        generateHTML += '</div></div>';
 
         generateHTML += '<div class="row">';
         generateHTML += '<div class="col-md-6">';
