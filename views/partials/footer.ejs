@@ -61,7 +61,7 @@
           generateHTML += '<p>';
           generateHTML += tempData[4];
           generateHTML += '</p>';
-          generateHTML += '<p> <button class="remove-btn" type="button" id="'+ item + '">Remove</button>'
+          generateHTML += '<p> <button class="btn btn-primary remove-btn" type="button" id="'+ item + '">Remove</button>'
           generateHTML += '</div></div>';
         });
         console.log('amount values :', amountValues.length > 0 ? 20 : 0);
@@ -83,6 +83,20 @@
         $('#total-amount').text(amountValues.length > 0 ? amountValues.reduce( (item, currValue) => item + currValue) + 20 + '$' : '0$');
       }
       $('.btn-product').click(function(){ 
+        var items = [];
+        for (var key in window.localStorage){
+          items.push(key);
+        }
+        var lastValue = '';
+        if(items.length - 6 > 0){
+          items = items.slice(0, items.length - 6);
+          lastValue = items[items.length - 1];
+          lastValue = lastValue.replace("checkout", "");
+        }
+        lastValue = lastValue === '' ? 0 : parseInt(lastValue) + 1;
+        window.localStorage.setItem('checkout' + lastValue, this.id);
+      });
+      $('.add-to-cart').click(function(){ 
         var items = [];
         for (var key in window.localStorage){
           items.push(key);
