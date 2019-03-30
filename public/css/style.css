@@ -1,5 +1,5 @@
 body{
-  padding-top: 100px;
+  padding-top: 50px;
 }
 #navbar-gap{
   margin-top: -4%;
@@ -12,7 +12,7 @@ body{
 
 .row.thumbnail .thumb-img {
   width: 120px;
-  height: 120px;
+  height: 50px;
 }
 
 .pice-details {
