@@ -55,8 +55,8 @@ router.get('/category/:id',function(req,res,next){
       products = products.map(item => {
         return {
           "title": item.name,
-          "image_url":"https://amazon-clone-hp.herokuapp.com/product/" + item.name,
-          "subtitle":"Availabel",
+          "image_url":"http://rockets.chatfuel.com/assets/shirt.jpg",
+          "subtitle":"in stock",
           "buttons":[
             {
               "type":"web_url",
