@@ -49,8 +49,8 @@
         items.forEach(item => {
           var tempData = window.localStorage.getItem(item).split("|");
           amountValues.push(parseInt(tempData[4].replace('$', '')));
-          generateHTML += '<div class="row thumbnail" id="div-' + item + '">';
-          generateHTML += '<div class="col-md-3">';
+          generateHTML += '<div class="row thumbnail cart-thumbnail" id="div-' + item + '">';
+          generateHTML += '<div class="col-md-6">';
           generateHTML += '<img class="thumb-img" src="' + tempData[3] + '" />';
           generateHTML += '</div>';
           generateHTML += '<div class="col-md-6 caption">';
