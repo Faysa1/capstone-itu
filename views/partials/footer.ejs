@@ -67,7 +67,7 @@
         generateHTML += "</div>";
         generateHTML += '<div class="col-md-4"><div class="pice-details"><h2>Price Details</h2>';
         generateHTML += '<div class="row"><div class="col-md-6"><p>Delivery Charges</p></div>';
-        generateHTML += '<div class="col-md-6"><p id="del-charges">' + (amountValues.length > 0 ? 20 : 0) +'$</p></div></div>';
+        generateHTML += '<div class="col-md-6"><p id="del-charges">' + (amountValues.length > 0 ? 6.99 : 0) +'$</p></div></div>';
         generateHTML += '<div class="row"><div class="col-md-6"><p>Amount Payable</p></div>';
         generateHTML += '<div class="col-md-6"><p id="total-amount">0$</p></div></div>';
         generateHTML += '</div></div>';
@@ -79,7 +79,7 @@
         generateHTML += '<button type="button" disabled class="btn btn-danger">PLACE ORDER</button>';
         generateHTML += '</div></div>';
         $('#row-checkout').html(generateHTML);
-        $('#total-amount').text(amountValues.length > 0 ? amountValues.reduce( (item, currValue) => item + currValue) + 20 + '$' : '0$');
+        $('#total-amount').text(amountValues.length > 0 ? amountValues.reduce( (item, currValue) => item + currValue) + 6.99 + '$' : '0$');
       }
       $('.btn-product').click(function(){ 
         var items = [];
